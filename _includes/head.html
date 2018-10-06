@@ -1,24 +1,40 @@
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ site.description | strip_html | normalize_whitespace }}">
-    {% if page.url == "/404/" %}<meta http-equiv="refresh" content="8; url=/">{% endif %}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ site.description | strip_html | normalize_whitespace }}">
+{% if page.url == "/404/" %}<meta http-equiv="refresh" content="8; url=/">{% endif %}
 
 
-    <title>{% if page.title %}{{ page.title | strip_html | normalize_whitespace }} | {{site.title | strip_html |
-        normalize_whitespace}}{% else %}{{ site.title | strip_html | normalize_whitespace }}{% endif %}</title>
+<title>{% if page.title %}{{ page.title | strip_html | normalize_whitespace }} | {{site.title | strip_html |
+normalize_whitespace}}{% else %}{{ site.title | strip_html | normalize_whitespace }}{% endif %}</title>
 
-    <link rel="icon" href="{{site.url}}{{site.baseurl}}/favicon.ico">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title | strip_html }}"
-          href="{{site.url}}{{site.baseurl}}/feed.xml">
+<link rel="icon" href="{{site.url}}{{site.baseurl}}/favicon.ico">
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title | strip_html }}"
+  href="{{site.url}}{{site.baseurl}}/feed.xml">
 
-    <link rel="stylesheet" href="{{site.url}}{{site.baseurl}}/assets/app.css">
+<link rel="stylesheet" href="{{site.url}}{{site.baseurl}}/assets/app.css">
 
-    {% include google-analytics.html %}
-    
-    {% include fb-pixel.html %}
+{% include google-analytics.html %}
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '242864673066586');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=242864673066586&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
 
 </head>
